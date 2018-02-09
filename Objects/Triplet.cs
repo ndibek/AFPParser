@@ -23,6 +23,7 @@ namespace AFPParser
             {
                 // The first byte is always length, so use that to add each triplet section to the list of byte arrays
                 int length = tripletData[curIndex];
+                if(length==0) break;;
                 tripletBytes.Add(tripletData.Skip(curIndex).Take(length).ToArray());
                 curIndex += length;
             }
